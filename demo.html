@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>zebraStripe Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> table { margin-top: .5em; } table, td, th { border: solid 1px black; } .container { float: left; margin-right: 2em; } .collapsed { display: none; } .odd { background-color: yellow; } .even { background-color: aqua; }</style>
+  </head>
+  <body>
+
+  <div class="container">
+    <button class="toggle-class">toggle class collapsed</button>
+
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>header</th>
+          <th>header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td>2.0</td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <td>3.0</td>
+          <td>3.0</td>
+        </tr>
+        <tr>
+          <td>4.0</td>
+          <td>4.0</td>
+        </tr>
+        <tr class="sub">
+          <td>4.1</td>
+          <td>4.1</td>
+        </tr>
+        <tr class="sub">
+          <td>4.2</td>
+          <td>4.2</td>
+        </tr>
+        <tr class="sub">
+          <td>4.3</td>
+          <td>4.3</td>
+        </tr>
+        <tr class="no-zebra">
+          <td>5.0</td>
+          <td>5.0</td>
+        </tr>
+        <tr>
+          <td>6.0</td>
+          <td>6.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="jquery.zebraStripe.min.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+
+      $(".zebra").zebraStripe();
+
+      $(".container").on("click", ".toggle-class", function() {
+        $(this).siblings("table").find("tr.sub").toggleClass("collapsed");
+      });
+
+    });
+  </script>
+
+  </body>
+</html>
