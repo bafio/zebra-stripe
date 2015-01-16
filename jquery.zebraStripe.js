@@ -1,11 +1,14 @@
-/**************************************
-* Zebra Striping Plugin               *
-* A pluging that zebra sripes a table *
-*                                     *
-* @author Fabio Trabucchi             *
-**************************************/
-"use strict";
+/*****************************************
+* Zebra Striping Plugin                  *
+* A pluging that zebra sripes a table    *
+* with observer on table row's for       *
+* "class" and "style" attributes changes *
+*                                        *
+* @author Fabio Trabucchi                *
+* @version 0.1                           *
+*****************************************/
 ;(function($) {
+  "use strict";
 
   var MutationObserver = window["MutationObserver"] || window["WebKitMutationObserver"] || window["MozMutationObserver"];
 
